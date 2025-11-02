@@ -3,44 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Netflix</title>
+  <title>Netflix Home Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .hero-bg {
+      background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/5bb5c57f-7e65-4a11-bb17-50f42dc91b2b/8eeb1b70-1748-4f6b-b1b9-4360c2d6dcb0/IN-en-20231106-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
 </head>
 <body>
-   <section id="header">
-    <div class="header container">
-      <div class="nav-bar">
-        <img src="img/hero.png" alt="Netflix Logo" class="logo">
-        <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
-          <ul>
-            <li><a href="#" data-after="Home">Home</a></li>
-            <li><a href="#" data-after="Tv Shows">Tv Shows</a></li>
-            <li><a href="#" data-after="Movies">Movies</a></li>
-            <li><a href="#" data-after="My List">My List</a></li>
-            <li><a href="#" data-after="Help">Help</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="sign-in">
-        <button>Sign In</button>
+  <!-- Header -->
+  <header class="absolute top-0 left-0 w-full flex justify-between items-center px-8 py-4 bg-gradient-to-b from-black/80 to-transparent z-10">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" class="w-28" alt="Netflix Logo">
+    <div class="flex gap-4">
+      <select class="bg-black/60 border border-gray-600 rounded px-2 py-1 text-sm">
+        <option>English</option>
+        <option>हिन्दी</option>
+      </select>
+      <button class="bg-red-600 hover:bg-red-700 px-4 py-1 rounded text-sm font-semibold">Sign In</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-bg h-screen flex flex-col items-center justify-center text-center px-6 relative">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="z-10 max-w-2xl">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Unlimited movies, TV shows and more</h1>
+      <p class="text-lg md:text-xl mb-6">Watch anywhere. Cancel anytime.</p>
+      <p class="text-md md:text-lg mb-4">Ready to watch? Enter your email to create or restart your membership.</p>
+      <div class="flex flex-col sm:flex-row gap-2 justify-center">
+        <input type="email" placeholder="Email address" class="px-4 py-3 rounded w-full sm:w-96 text-black" />
+        <button class="bg-red-600 hover:bg-red-700 px-6 py-3 text-lg font-bold rounded">Get Started ></button>
       </div>
     </div>
   </section>
-  <main>
-    <section class="showcase">
-      <h1>Welcome to <span>NETFLICX</span></h1>
-      <h3>Watch Unlimited Movies,TV Shows & hit series</h3>
-      <p>Join today. Cancel anytime.</p>
-      <p>Subscribe now and get access to exclusive content!</p>
-      <button class="cta-button">Subscribe</button>
-    </section>
-  </main>
-  <footer class="UTV">
-    <p>&copy; 2023 Netflix. All Rights Reserved.</p>
+
+  <!-- Features Section -->
+  <section class="bg-black py-20 border-t-8 border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10">
+      <div>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Enjoy on your TV</h2>
+        <p class="text-lg mb-4">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+      </div>
+      <div class="relative">
+        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV" class="z-10 relative">
+        <video class="absolute top-[20%] left-[13%] w-[74%]" autoplay muted loop>
+          <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="bg-black py-20 border-t-8 border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10">
+      <div class="relative order-2 md:order-1">
+        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Mobile" class="rounded-lg">
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black border border-gray-700 rounded-lg px-4 py-2 flex items-center gap-4 w-[80%]">
+          <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" class="w-12 h-16" alt="Stranger Things">
+          <div>
+            <p class="font-semibold">Stranger Things</p>
+            <p class="text-blue-400 text-sm">Downloading...</p>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Download your shows to watch offline</h2>
+        <p class="text-lg">Save your favourites easily and always have something to watch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-black py-20 border-t-8 border-gray-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="bg-gray-800 p-4 rounded cursor-pointer hover:bg-gray-700">What is Netflix?</div>
+        <div class="bg-gray-800 p-4 rounded cursor-pointer hover:bg-gray-700">How much does Netflix cost?</div>
+        <div class="bg-gray-800 p-4 rounded cursor-pointer hover:bg-gray-700">Where can I watch?</div>
+        <div class="bg-gray-800 p-4 rounded cursor-pointer hover:bg-gray-700">How do I cancel?</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-10 border-t-8 border-gray-800 text-gray-400 text-sm">
+    <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <ul class="space-y-2">
+        <li>FAQ</li>
+        <li>Help Center</li>
+        <li>Account</li>
+        <li>Media Center</li>
+      </ul>
+      <ul class="space-y-2">
+        <li>Investor Relations</li>
+        <li>Jobs</li>
+        <li>Ways to Watch</li>
+        <li>Terms of Use</li>
+      </ul>
+      <ul class="space-y-2">
+        <li>Privacy</li>
+        <li>Cookie Preferences</li>
+        <li>Corporate Information</li>
+        <li>Contact Us</li>
+      </ul>
+      <ul class="space-y-2">
+        <li>Speed Test</li>
+        <li>Legal Notices</li>
+        <li>Only on Netflix</li>
+      </ul>
+    </div>
+    <p class="text-center mt-10">Netflix Home Clone</p>
   </footer>
-  <script src="scripts.js"></script>
+
+  <script>
+    // Small animation or FAQ toggle placeholder
+    document.querySelectorAll('.cursor-pointer').forEach(el => {
+      el.addEventListener('click', () => alert(el.textContent + ' clicked!'));
+    });
+  </script>
 </body>
 </html>
